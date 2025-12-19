@@ -53,7 +53,7 @@
 \newcommand{\tabreff}[2]{Tables~\ref{tab:#1} and \ref{tab:#2}}
 \newcommand{\tabrefff}[3]{Tables~\ref{tab:#1}, \ref{tab:#2} and \ref{tab:#3}}
 
-\def\year{2024--2025}
+\def\year{2025--2026}
 \title{EITA65 Design of Systems for Digital Transformation\\\year}
 %\title{EITA65 Digitalisering -- realisering och systemdesign med användarperspektiv\\\year}
 \author{\huge Configuring a Private Network\\Drone Project -- Part 4}
@@ -158,7 +158,7 @@ Once you have your network configured successfully, deploy the drone system on t
 
 The system setup here is different from that in the previous assignments. The drone part is now moved to a separate Raspberry Pi (Pi One in \Cref{fig:sys}). Therefore, in order for the route planner to be able to send address information to the drone, we need to have the Raspberry Pis communicate via the network through IP addresses. Therefore, the Drone Pi also needs to run a flask server (\verb!drone.py!) in order to listen to requests from the route planner.
 
-\noindent Once the Drone Pi receives coordinates, it starts the simulation and updates its location to the Redis database, which is hosted on the Server Pi. Thus, both Pis need to know each other's IP addresses in order to communicate. Open the code files on both Raspberry Pis, replace the {\bf REDIS\_SERVER}\footnote{Also check the connection to the Redis database in \texttt{routeplanner.py}.} and {\bf DRONE\_IP} with the correct addresses on Server Pi, and replace {\bf WEBSERVER\_IP} on the Drone Pi. You will also need to update \texttt{simulator.py}. Then run the system following the instructions in \verb!README.md!. If everything is configured correctly, you should be able to input addresses in your browser and see the drone moving on the map, as in LP2. When you have finished all the tasks in this part, show the TA your working system.
+\noindent Once the Drone Pi receives coordinates, it starts the simulation and updates its location to the Redis database, which is hosted on the Server Pi. Thus, both Pis need to know each other's IP addresses in order to communicate. Open all the Python code files on both Raspberry Pis, replace the {\bf REDIS\_SERVER} and {\bf DRONE\_IP} with the correct addresses on Server Pi, and replace {\bf WEBSERVER\_IP} on the Drone Pi. You will also need to update \texttt{simulator.py}. Then run the system following the instructions in \verb!README.md!. If everything is configured correctly, you should be able to input addresses in your browser and see the drone moving on the map, as in the previous assignment (Route Planning). When you have finished all the tasks in this part, show the TA your working system.
 % {\bf Hint 1: }\parbox[t]{14cm}{Check for updates to this document. Instructions may have been clarified in a more recent version. You can find the version number of the document on the very first page. The version number is the compile-date of the document in ISO-format~\cite{iso-date-time}.}\\
 % {\bf Hint 2: }\parbox[t]{14cm}{To avoid rewriting many commands, you can use the keys \texttt{arrow up} and \texttt{arrow down} to go back and forth between the commands that you just wrote.}\\
 % {\bf Hint 3: }\parbox[t]{14cm}{To paste commands into the terminal you can use \texttt{Ctrl + Shift + V}}\\
